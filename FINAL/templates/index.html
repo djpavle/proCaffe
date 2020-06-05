@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="container">
+        <h3>Bartender: {{name}}</h3>
+        {% if invoiceMsg %}
+        <h3>{{invoiceMsg}}</h3>
+        {% endif %}
+        <div class="row">
+            <a href="/table1"><div class="caffeTable brownBorder">Table 1</div></a>
+            <a href="/table2"><div class="caffeTable brownBorder">Table 2</div></a>
+            <a href="/table3"><div class="caffeTable brownBorder">Table 3</div></a>
+        </div>
+        <div class="row">
+            <a href="/table4"><div class="caffeTable brownBorder">Table 4</div></a>
+            <a href="/table5"><div class="caffeTable brownBorder">Table 5</div></a>
+            <a href="/table6"><div class="caffeTable brownBorder">Table 6</div></a>
+        </div>
+        <div class="row">
+            <a href="/table7"><div class="caffeTable brownBorder">Table 7</div></a>
+            <a href="/table8"><div class="caffeTable brownBorder">Table 8</div></a>
+            <a href="/table9"><div class="caffeTable brownBorder">Table 9</div></a>
+            <a href="/table10"><div class="caffeTable brownBorder">Table 10</div></a>
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

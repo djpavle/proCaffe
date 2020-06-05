@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="tableBody">
+
+    <div class="tableOrder">
+        <h2>Table {{table_id}} order</h2>
+        <table>
+            <thead>
+                <td>Order ID</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Volume</td>
+                <td>Bill ID</td>
+                <td>Drink ID</td>
+            
+            </thead>
+        {% if table1_bill %}    
+        {% for item in table1_bill %}
+
+        <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            <td>{{item[5]}}</td>
+            <td id="removeBtn"><a href="/remove/{{table_id}}/{{item[0]}}">Remove</a></td>
+        </tr>
+
+        {% endfor %}
+        
+        {% else %}
+        <h3>Table {{id}} bill is empty</h3>
+
+        {% endif %}
+        </table>
+        <br><br>
+        {% if total_price %}
+        <h3>Total price : {{total_price}}</h3>
+        {% endif %}
+        <a href="/invoice/{{table_id}}/{{total_price}}"><button>Print receipt and close order</button></a>
+    </div>
+    <div class="menuItems">
+        <h2>Drink Menu</h2>
+        <table>
+            <thead>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Volume</td>
+                
+            </thead>
+        {% for drink in drinklist %}
+            <tr>
+                <td>{{drink[0]}}</td>
+                <td>{{drink[1]}}</td>
+                <td>{{drink[2]}}</td>
+                <td>{{drink[3]}}</td>
+                <td id="addBtn"><a href="/add/{{table_id}}/{{drink[0]}}">Add to order</a></td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+    </div>
+</div>
+
+{% endblock %}

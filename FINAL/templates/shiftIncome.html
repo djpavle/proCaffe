@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+ 
+
+<div id='shiftIncomeContainer'>
+<table>
+    <thead>
+        <td>bill id</td>
+        <td>table id</td>
+        <td>bill price</td>
+        <td>bartender id</td>
+        <td>time initiated</td>
+        <td>active</td>
+        <td>time finished</td>
+    </thead>
+
+
+{% for bill in total_shift_bills %}
+<tr> 
+<td>{{bill[0]}}</td>
+<td>{{bill[1]}}</td>
+<td>{{bill[2]}}</td>
+<td>{{bill[3]}}</td>
+<td>{{bill[4]}}</td>
+<td>{{bill[5]}}</td>
+<td>{{bill[6]}}</td>
+</tr>   
+
+{% endfor %}
+<h3><b>Total shift income: {{sum_total}} </b></h3>
+</table>
+</div>
+{% endblock %}
